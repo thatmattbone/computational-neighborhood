@@ -1,10 +1,11 @@
 package edu.luc.etl.node;
 
 import java.net.InetAddress;
+import java.util.UUID;
 
 public interface INode {
 
-	public String getId();
+	public UUID getId();
 	
 	public InetAddress getIp();
 	
