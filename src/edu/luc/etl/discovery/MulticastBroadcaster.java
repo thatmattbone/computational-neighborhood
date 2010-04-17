@@ -5,19 +5,24 @@ import java.net.DatagramSocket;
 import java.net.InetAddress;
 
 import edu.luc.etl.IService;
+import edu.luc.etl.Util;
+import edu.luc.etl.messages.Messages.NodeBroadcst;
+import edu.luc.etl.node.INode;
 
 public class MulticastBroadcaster implements IService {
 
 	protected InetAddress multicastAddress = null;
 	protected DatagramSocket socket = null;
+	protected INode myNode;
 	
 	protected boolean keepRunning = true;
 	
-	protected int sleepValue = 500; //amount to sleep between broadcasts
+	protected int sleepValue = 5000; //amount to sleep between broadcasts
 
-	public MulticastBroadcaster(DatagramSocket socket, InetAddress multicastAddress) {
+	public MulticastBroadcaster(DatagramSocket socket, InetAddress multicastAddress, INode myNode) {
 		this.setSocket(socket);
 		this.multicastAddress = multicastAddress;
+		this.myNode = myNode;
 	}
 
 	public void setSocket(DatagramSocket socket) {
@@ -36,13 +41,20 @@ public class MulticastBroadcaster implements IService {
 	public void run() {
 
 		while(keepRunning) {
-			byte[] buf  = new byte[256];
 			
-			String broadcast = "broadcast";
-			buf = broadcast.getBytes();
+			NodeBroadcst msg = NodeBroadcst.newBuilder()
+				.setUuid(myNode.getId().toString())
+				.build();
 			
-			DatagramPacket packet;
-			packet = new DatagramPacket(buf, buf.length, this.multicastAddress, 9999);
+			try {
+				System.out.println(Util.getHexString(msg.toByteArray()));
+			} catch (Exception e1) {
+			}
+			
+			DatagramPacket packet = new DatagramPacket(msg.toByteArray(), 
+													   msg.getSerializedSize(), 
+													   this.multicastAddress, 
+													   9999);
 			
 			try {
 				socket.send(packet);

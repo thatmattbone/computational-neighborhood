@@ -1,13 +1,14 @@
 package edu.luc.etl;
 
-import java.net.DatagramPacket;
-import java.net.DatagramSocket;
 import java.net.InetAddress;
 import java.net.MulticastSocket;
 import java.net.SocketException;
+import java.util.UUID;
 
 import edu.luc.etl.discovery.MulticastBroadcaster;
 import edu.luc.etl.discovery.MulticastReceiver;
+import edu.luc.etl.node.INode;
+import edu.luc.etl.node.RemoteNodeProxy;
 
 public class Server {
 
@@ -31,7 +32,9 @@ public class Server {
 
 		IService broadcaster, receiver;
 		
-		broadcaster = new MulticastBroadcaster(socket, group);
+		INode myNode = new RemoteNodeProxy(UUID.randomUUID().toString(), "127.0.0.1");
+		
+		broadcaster = new MulticastBroadcaster(socket, group, myNode);
 		receiver = new MulticastReceiver(socket);
 		
 		Thread broadcasterThread, receiverThread;
