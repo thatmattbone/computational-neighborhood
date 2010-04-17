@@ -9,4 +9,8 @@ public interface INode {
 	
 	public InetAddress getIp();
 	
+	public long getLastHeartbeatTime();
+	
+	public void setLastHeartbeatTime(long lastHeartbeatTime);
+	
 }

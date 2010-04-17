@@ -1,0 +1,7 @@
+Build:
+ - scons
+ - gant
+ - ivy 
+ - gradle
+ 
+ When installing protobufs in ubuntu, must run ldconfig after the make install.

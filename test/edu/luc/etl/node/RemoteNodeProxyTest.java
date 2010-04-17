@@ -49,4 +49,12 @@ public class RemoteNodeProxyTest {
 		assertTrue(node1Equivalent.equals(node1));
 	}
 
+	@Test
+	public void testSetGetHeartbeat() {
+		long currentTime = System.currentTimeMillis();
+		
+		node1.setLastHeartbeatTime(currentTime);
+		
+		assertEquals(currentTime, node1.getLastHeartbeatTime());
+	}
 }
