@@ -3,6 +3,6 @@ package cn;
 option java_package = "edu.luc.etl.messages";
 option java_outer_classname = "Messages";
 
-message NodeBroadcst {
+message NodeBroadcast {
   required string uuid = 1;
 }

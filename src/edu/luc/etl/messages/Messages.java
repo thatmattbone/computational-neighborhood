@@ -8,31 +8,31 @@ public final class Messages {
   public static void registerAllExtensions(
       com.google.protobuf.ExtensionRegistry registry) {
   }
-  public static final class NodeBroadcst extends
+  public static final class NodeBroadcast extends
       com.google.protobuf.GeneratedMessage {
-    // Use NodeBroadcst.newBuilder() to construct.
-    private NodeBroadcst() {
+    // Use NodeBroadcast.newBuilder() to construct.
+    private NodeBroadcast() {
       initFields();
     }
-    private NodeBroadcst(boolean noInit) {}
+    private NodeBroadcast(boolean noInit) {}
     
-    private static final NodeBroadcst defaultInstance;
-    public static NodeBroadcst getDefaultInstance() {
+    private static final NodeBroadcast defaultInstance;
+    public static NodeBroadcast getDefaultInstance() {
       return defaultInstance;
     }
     
-    public NodeBroadcst getDefaultInstanceForType() {
+    public NodeBroadcast getDefaultInstanceForType() {
       return defaultInstance;
     }
     
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return edu.luc.etl.messages.Messages.internal_static_cn_NodeBroadcst_descriptor;
+      return edu.luc.etl.messages.Messages.internal_static_cn_NodeBroadcast_descriptor;
     }
     
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return edu.luc.etl.messages.Messages.internal_static_cn_NodeBroadcst_fieldAccessorTable;
+      return edu.luc.etl.messages.Messages.internal_static_cn_NodeBroadcast_fieldAccessorTable;
     }
     
     // required string uuid = 1;
@@ -73,41 +73,41 @@ public final class Messages {
       return size;
     }
     
-    public static edu.luc.etl.messages.Messages.NodeBroadcst parseFrom(
+    public static edu.luc.etl.messages.Messages.NodeBroadcast parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return newBuilder().mergeFrom(data).buildParsed();
     }
-    public static edu.luc.etl.messages.Messages.NodeBroadcst parseFrom(
+    public static edu.luc.etl.messages.Messages.NodeBroadcast parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return newBuilder().mergeFrom(data, extensionRegistry)
                .buildParsed();
     }
-    public static edu.luc.etl.messages.Messages.NodeBroadcst parseFrom(byte[] data)
+    public static edu.luc.etl.messages.Messages.NodeBroadcast parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return newBuilder().mergeFrom(data).buildParsed();
     }
-    public static edu.luc.etl.messages.Messages.NodeBroadcst parseFrom(
+    public static edu.luc.etl.messages.Messages.NodeBroadcast parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return newBuilder().mergeFrom(data, extensionRegistry)
                .buildParsed();
     }
-    public static edu.luc.etl.messages.Messages.NodeBroadcst parseFrom(java.io.InputStream input)
+    public static edu.luc.etl.messages.Messages.NodeBroadcast parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return newBuilder().mergeFrom(input).buildParsed();
     }
-    public static edu.luc.etl.messages.Messages.NodeBroadcst parseFrom(
+    public static edu.luc.etl.messages.Messages.NodeBroadcast parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return newBuilder().mergeFrom(input, extensionRegistry)
                .buildParsed();
     }
-    public static edu.luc.etl.messages.Messages.NodeBroadcst parseDelimitedFrom(java.io.InputStream input)
+    public static edu.luc.etl.messages.Messages.NodeBroadcast parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       Builder builder = newBuilder();
       if (builder.mergeDelimitedFrom(input)) {
@@ -116,7 +116,7 @@ public final class Messages {
         return null;
       }
     }
-    public static edu.luc.etl.messages.Messages.NodeBroadcst parseDelimitedFrom(
+    public static edu.luc.etl.messages.Messages.NodeBroadcast parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -127,12 +127,12 @@ public final class Messages {
         return null;
       }
     }
-    public static edu.luc.etl.messages.Messages.NodeBroadcst parseFrom(
+    public static edu.luc.etl.messages.Messages.NodeBroadcast parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return newBuilder().mergeFrom(input).buildParsed();
     }
-    public static edu.luc.etl.messages.Messages.NodeBroadcst parseFrom(
+    public static edu.luc.etl.messages.Messages.NodeBroadcast parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -142,25 +142,25 @@ public final class Messages {
     
     public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(edu.luc.etl.messages.Messages.NodeBroadcst prototype) {
+    public static Builder newBuilder(edu.luc.etl.messages.Messages.NodeBroadcast prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
     
     public static final class Builder extends
         com.google.protobuf.GeneratedMessage.Builder<Builder> {
-      private edu.luc.etl.messages.Messages.NodeBroadcst result;
+      private edu.luc.etl.messages.Messages.NodeBroadcast result;
       
-      // Construct using edu.luc.etl.messages.Messages.NodeBroadcst.newBuilder()
+      // Construct using edu.luc.etl.messages.Messages.NodeBroadcast.newBuilder()
       private Builder() {}
       
       private static Builder create() {
         Builder builder = new Builder();
-        builder.result = new edu.luc.etl.messages.Messages.NodeBroadcst();
+        builder.result = new edu.luc.etl.messages.Messages.NodeBroadcast();
         return builder;
       }
       
-      protected edu.luc.etl.messages.Messages.NodeBroadcst internalGetResult() {
+      protected edu.luc.etl.messages.Messages.NodeBroadcast internalGetResult() {
         return result;
       }
       
@@ -169,7 +169,7 @@ public final class Messages {
           throw new IllegalStateException(
             "Cannot call clear() after build().");
         }
-        result = new edu.luc.etl.messages.Messages.NodeBroadcst();
+        result = new edu.luc.etl.messages.Messages.NodeBroadcast();
         return this;
       }
       
@@ -179,24 +179,24 @@ public final class Messages {
       
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return edu.luc.etl.messages.Messages.NodeBroadcst.getDescriptor();
+        return edu.luc.etl.messages.Messages.NodeBroadcast.getDescriptor();
       }
       
-      public edu.luc.etl.messages.Messages.NodeBroadcst getDefaultInstanceForType() {
-        return edu.luc.etl.messages.Messages.NodeBroadcst.getDefaultInstance();
+      public edu.luc.etl.messages.Messages.NodeBroadcast getDefaultInstanceForType() {
+        return edu.luc.etl.messages.Messages.NodeBroadcast.getDefaultInstance();
       }
       
       public boolean isInitialized() {
         return result.isInitialized();
       }
-      public edu.luc.etl.messages.Messages.NodeBroadcst build() {
+      public edu.luc.etl.messages.Messages.NodeBroadcast build() {
         if (result != null && !isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return buildPartial();
       }
       
-      private edu.luc.etl.messages.Messages.NodeBroadcst buildParsed()
+      private edu.luc.etl.messages.Messages.NodeBroadcast buildParsed()
           throws com.google.protobuf.InvalidProtocolBufferException {
         if (!isInitialized()) {
           throw newUninitializedMessageException(
@@ -205,27 +205,27 @@ public final class Messages {
         return buildPartial();
       }
       
-      public edu.luc.etl.messages.Messages.NodeBroadcst buildPartial() {
+      public edu.luc.etl.messages.Messages.NodeBroadcast buildPartial() {
         if (result == null) {
           throw new IllegalStateException(
             "build() has already been called on this Builder.");
         }
-        edu.luc.etl.messages.Messages.NodeBroadcst returnMe = result;
+        edu.luc.etl.messages.Messages.NodeBroadcast returnMe = result;
         result = null;
         return returnMe;
       }
       
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof edu.luc.etl.messages.Messages.NodeBroadcst) {
-          return mergeFrom((edu.luc.etl.messages.Messages.NodeBroadcst)other);
+        if (other instanceof edu.luc.etl.messages.Messages.NodeBroadcast) {
+          return mergeFrom((edu.luc.etl.messages.Messages.NodeBroadcast)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
       
-      public Builder mergeFrom(edu.luc.etl.messages.Messages.NodeBroadcst other) {
-        if (other == edu.luc.etl.messages.Messages.NodeBroadcst.getDefaultInstance()) return this;
+      public Builder mergeFrom(edu.luc.etl.messages.Messages.NodeBroadcast other) {
+        if (other == edu.luc.etl.messages.Messages.NodeBroadcast.getDefaultInstance()) return this;
         if (other.hasUuid()) {
           setUuid(other.getUuid());
         }
@@ -284,23 +284,23 @@ public final class Messages {
         return this;
       }
       
-      // @@protoc_insertion_point(builder_scope:cn.NodeBroadcst)
+      // @@protoc_insertion_point(builder_scope:cn.NodeBroadcast)
     }
     
     static {
-      defaultInstance = new NodeBroadcst(true);
+      defaultInstance = new NodeBroadcast(true);
       edu.luc.etl.messages.Messages.internalForceInit();
       defaultInstance.initFields();
     }
     
-    // @@protoc_insertion_point(class_scope:cn.NodeBroadcst)
+    // @@protoc_insertion_point(class_scope:cn.NodeBroadcast)
   }
   
   private static com.google.protobuf.Descriptors.Descriptor
-    internal_static_cn_NodeBroadcst_descriptor;
+    internal_static_cn_NodeBroadcast_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_cn_NodeBroadcst_fieldAccessorTable;
+      internal_static_cn_NodeBroadcast_fieldAccessorTable;
   
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -310,23 +310,23 @@ public final class Messages {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\016messages.proto\022\002cn\"\034\n\014NodeBroadcst\022\014\n\004" +
-      "uuid\030\001 \002(\tB \n\024edu.luc.etl.messagesB\010Mess" +
-      "ages"
+      "\n\016messages.proto\022\002cn\"\035\n\rNodeBroadcast\022\014\n" +
+      "\004uuid\030\001 \002(\tB \n\024edu.luc.etl.messagesB\010Mes" +
+      "sages"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
       new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
         public com.google.protobuf.ExtensionRegistry assignDescriptors(
             com.google.protobuf.Descriptors.FileDescriptor root) {
           descriptor = root;
-          internal_static_cn_NodeBroadcst_descriptor =
+          internal_static_cn_NodeBroadcast_descriptor =
             getDescriptor().getMessageTypes().get(0);
-          internal_static_cn_NodeBroadcst_fieldAccessorTable = new
+          internal_static_cn_NodeBroadcast_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_cn_NodeBroadcst_descriptor,
+              internal_static_cn_NodeBroadcast_descriptor,
               new java.lang.String[] { "Uuid", },
-              edu.luc.etl.messages.Messages.NodeBroadcst.class,
-              edu.luc.etl.messages.Messages.NodeBroadcst.Builder.class);
+              edu.luc.etl.messages.Messages.NodeBroadcast.class,
+              edu.luc.etl.messages.Messages.NodeBroadcast.Builder.class);
           return null;
         }
       };

@@ -3,11 +3,10 @@ package edu.luc.etl.discovery;
 import java.io.IOException;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
-import java.net.InetAddress;
 
 import edu.luc.etl.IService;
 import edu.luc.etl.Util;
-import edu.luc.etl.messages.Messages.NodeBroadcst;
+import edu.luc.etl.messages.Messages.NodeBroadcast;
 
 public class MulticastReceiver implements IService {
 	
@@ -47,7 +46,7 @@ public class MulticastReceiver implements IService {
 				} catch (Exception e1) {
 				}
 				
-				NodeBroadcst msg = NodeBroadcst.parseFrom(packet.getData());
+				NodeBroadcast msg = NodeBroadcast.parseFrom(packet.getData());
 				
 				System.out.println("received msg from server: " + msg.getUuid());
 

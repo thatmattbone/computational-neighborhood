@@ -6,7 +6,7 @@ import java.net.InetAddress;
 
 import edu.luc.etl.IService;
 import edu.luc.etl.Util;
-import edu.luc.etl.messages.Messages.NodeBroadcst;
+import edu.luc.etl.messages.Messages.NodeBroadcast;
 import edu.luc.etl.node.INode;
 
 public class MulticastBroadcaster implements IService {
@@ -42,7 +42,7 @@ public class MulticastBroadcaster implements IService {
 
 		while(keepRunning) {
 			
-			NodeBroadcst msg = NodeBroadcst.newBuilder()
+			NodeBroadcast msg = NodeBroadcast.newBuilder()
 				.setUuid(myNode.getId().toString())
 				.build();
 			
