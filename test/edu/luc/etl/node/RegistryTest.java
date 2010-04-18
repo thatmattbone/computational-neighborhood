@@ -10,7 +10,7 @@ import org.junit.Test;
 
 public class RegistryTest {
 	
-	protected Registry registry;
+	protected IRegistry registry;
 	
 	@Before
 	public void setUp() {

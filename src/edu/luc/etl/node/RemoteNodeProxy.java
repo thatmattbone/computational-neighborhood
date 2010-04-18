@@ -23,6 +23,11 @@ public class RemoteNodeProxy implements INode {
 		this.id = UUID.fromString(id);
 	}
 
+	public RemoteNodeProxy(String uuid, InetAddress address) {
+		this.ip = address;
+		this.id = UUID.fromString(uuid);
+	}
+
 	@Override
 	public InetAddress getIp() {
 		return ip;

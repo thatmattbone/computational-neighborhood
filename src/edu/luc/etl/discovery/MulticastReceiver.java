@@ -3,16 +3,21 @@ package edu.luc.etl.discovery;
 import java.io.IOException;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
+import java.net.InetAddress;
 
 import edu.luc.etl.IService;
-import edu.luc.etl.Util;
 import edu.luc.etl.messages.Messages.NodeBroadcast;
+import edu.luc.etl.node.INode;
+import edu.luc.etl.node.IRegistry;
+import edu.luc.etl.node.RemoteNodeProxy;
 
 public class MulticastReceiver implements IService {
 	
 	protected DatagramSocket socket = null;
 	
 	protected boolean keepRunning = true;
+
+	protected IRegistry registry;
 
 	public MulticastReceiver(DatagramSocket socket) {
 		this.setSocket(socket);
@@ -21,6 +26,10 @@ public class MulticastReceiver implements IService {
 
 	public void setSocket(DatagramSocket socket) {
 		this.socket = socket;
+	}
+	
+	public void setRegistry(IRegistry registry) {
+		this.registry = registry;
 	}
 
 	@Override
@@ -38,23 +47,18 @@ public class MulticastReceiver implements IService {
 				
 				byte[] buf = new byte[38]; //TODO hardcoded the size of this msg in here...always 38 bytes. BAD
 				DatagramPacket packet = new DatagramPacket(buf, buf.length);
-				//System.out.println("receiver going to block: ");
-				socket.receive(packet); //TODO set timeout
 				
-				try {
-					System.out.println(Util.getHexString(packet.getData()));
-				} catch (Exception e1) {
-				}
+				socket.receive(packet); //TODO set timeout
 				
 				NodeBroadcast msg = NodeBroadcast.parseFrom(packet.getData());
 				
-				System.out.println("received msg from server: " + msg.getUuid());
+				InetAddress address = packet.getAddress();
 
-				//send the response to the client at "address" and "port"
-				//InetAddress address = packet.getAddress();
-				//System.out.println("Received multicast package from: " + address);
+				INode node = new RemoteNodeProxy(msg.getUuid(), address);
+				
+				registry.heartbeatFromNode(node);
 			} catch(IOException e) {
-				e.printStackTrace();			
+				e.printStackTrace();
 			}
 		}
 		socket.close();

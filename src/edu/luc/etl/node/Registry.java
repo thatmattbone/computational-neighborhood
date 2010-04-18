@@ -11,18 +11,14 @@ import java.util.UUID;
  * 
  * @author mbone
  */
-public class Registry {
+public class Registry implements IRegistry {
 
 	protected long timeout = 2000; //default to two seconds
 	
 	protected HashMap<UUID, INode> nodeMap = new HashMap<UUID, INode>();
 	
-	/**
-	 * Node has sent a notification.
-	 * 
-	 * Either add the new node, or update the existing node's last heartbeat time.
-	 * 
-	 * @param node
+	/* (non-Javadoc)
+	 * @see edu.luc.etl.node.IRegistry#heartbeatFromNode(edu.luc.etl.node.INode)
 	 */
 	public synchronized void heartbeatFromNode(INode node) {
 		UUID nodeId = node.getId();
@@ -35,9 +31,8 @@ public class Registry {
 		}
 	}
 	
-	/**
-	 * Return the list of active nodes.
-	 * @return
+	/* (non-Javadoc)
+	 * @see edu.luc.etl.node.IRegistry#getNodes()
 	 */
 	public synchronized List<INode> getNodes() {
 		ArrayList<INode> nodes = new ArrayList<INode>();
@@ -46,11 +41,8 @@ public class Registry {
 		return nodes;
 	}
 	
-	/**
-	 * Remove dead nodes from the registry.  
-	 * Dead nodes are defined as nodes those that have not been heard from
-	 * in <this.timeout> seconds. 
-	 * 
+	/* (non-Javadoc)
+	 * @see edu.luc.etl.node.IRegistry#reapDeadNodes()
 	 */
 	public synchronized void reapDeadNodes() {
 		long currentTime = System.currentTimeMillis();
@@ -64,6 +56,9 @@ public class Registry {
 		}
 	}
 	
+	/* (non-Javadoc)
+	 * @see edu.luc.etl.node.IRegistry#setTimeout(int)
+	 */
 	public void setTimeout(int timeout) { this.timeout = timeout; }
 	
 }
